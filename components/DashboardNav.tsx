@@ -10,7 +10,7 @@ const DashboardNav = (props: Props) => {
     console.log(router.pathname)
 
   return (
-    <div className='sticky top-0 w-full h-[100px] flex items-center justify-center bg-cyan-100 gap-10'>
+    <div className='sticky top-0 z-10 w-full h-[100px] flex items-center justify-center bg-cyan-100 gap-10'>
         <Link className={`${router.pathname === "/dashboard" && "font-bold"}`} href="/dashboard">Giao dịch</Link>
         <Link className={`${router.pathname === "/dashboard/category" && "font-bold"}`} href="/dashboard/category">Danh mục</Link>
         <Link className={`${router.pathname === "/dashboard/product" && "font-bold"}`} href="/dashboard/product">Sản phẩm</Link>
