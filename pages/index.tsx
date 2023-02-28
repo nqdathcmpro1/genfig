@@ -18,28 +18,17 @@ import { Category, Product } from "@/interface";
 const HomePageCaroussel = () => {
   return (
     <div className="w-full h-fit grid place-items-center ">
-      <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 w-full rounded-none">
-        <Carousel slideInterval={10000} className="rounded-none">
+      <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 w-9/12 rounded-none">
+        <Carousel slideInterval={10000} className="object-contain rounded-none">
           <img
-            src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
+            src="https://genshin.global/wp-content/uploads/2022/08/nendoroid-kaeya-xiao-figure-toy-goodsmile-genshin.webp"
             alt="..."
           />
           <img
-            src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
+            src="https://genshin.global/wp-content/uploads/2022/07/kotobukiya-aether-lumine-traveler-figure-genshinimpact-887w.webp"
             alt="..."
           />
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-            alt="..."
-          />
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
-            alt="..."
-          />
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-            alt="..."
-          />
+          
         </Carousel>
       </div>
     </div>
