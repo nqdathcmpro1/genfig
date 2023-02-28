@@ -25,6 +25,7 @@ type ProductProps = {
   id: string;
   name: string;
   price: number;
+  imgUrl: string;
   quantity: number;
   category: string;
   timestamp?: FieldValue;
@@ -41,6 +42,7 @@ const Product = ({ categoriesData, productsData }: Props) => {
     id: "",
     name: "",
     price: 0,
+    imgUrl: "",
     quantity: 0,
     category: "",
     timestamp: serverTimestamp(),
@@ -135,6 +137,7 @@ const Product = ({ categoriesData, productsData }: Props) => {
               <th className="border-4 border-black">Mã sản phẩm</th>
               <th className="border-4 border-black">Tên sản phẩm</th>
               <th className="border-4 border-black">Giá</th>
+              <th className="border-4 border-black">Ảnh sản phẩm</th>
               <th className="border-4 border-black">Số lượng</th>
               <th className="border-4 border-black">Danh mục</th>
               <th className="border-4 border-black">Tuỳ chọn</th>
@@ -146,6 +149,9 @@ const Product = ({ categoriesData, productsData }: Props) => {
                 <th className="border-4 border-gray-400">{item.id}</th>
                 <th className="border-4 border-gray-400">{item.name}</th>
                 <th className="border-4 border-gray-400">{item.price}</th>
+                <th className="border-4 border-gray-400 flex items-center justify-center">
+                  <img className="w-[200px]" src={item.imgUrl} />
+                </th>
                 <th className="border-4 border-gray-400">{item.quantity}</th>
                 <th className="border-4 border-gray-400">{item.category}</th>
                 <th className="border-4 border-gray-400">
@@ -183,6 +189,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       id: doc?.id as string,
       category: doc?.data().category,
       name: doc?.data().name,
+      imgUrl: doc?.data().imgUrl,
       price: doc?.data().price,
       quantity: doc?.data().quantity,
     });
