@@ -48,10 +48,7 @@ const NavBar = () => {
       });
       return setCategoriesData(data);
     };
-
-    return () => {
-      unsubscribe();
-    };
+    unsubscribe();
   }, []);
 
   const NavBarUpper = ({ categoriesData }: PartialProps) => {
@@ -303,13 +300,23 @@ const NavBar = () => {
               openProfileList ? "flex" : "hidden"
             }`}
           >
-            <Link className="px-5 py-1" onClick={() => setIsOpen(false)} href="/me">
+            <Link
+              className="px-5 py-1"
+              onClick={() => setIsOpen(false)}
+              href="/me"
+            >
               Quản lý tài khoản
             </Link>
-            <Link className="px-5 py-1" onClick={() => setIsOpen(false)} href="/history">
+            <Link
+              className="px-5 py-1"
+              onClick={() => setIsOpen(false)}
+              href="/history"
+            >
               Lịch sử giao dịch
             </Link>
-            <div className="px-5 py-1" onClick={() => logout?.()}>Đăng xuất</div>
+            <div className="px-5 py-1" onClick={() => logout?.()}>
+              Đăng xuất
+            </div>
           </div>
 
           <Link
