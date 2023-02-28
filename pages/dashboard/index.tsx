@@ -13,7 +13,7 @@ const Dashboard = ({ paymentData }: Props) => {
     <div className="p-5">
       <div className="overflow-auto relative">
       <table className="border-4 border-gray-400 h-[550px] w-[1500px] overflow-scroll relative">
-        <thead className="sticky z-10 top-0 border-4 border-black bg-white font-bold">
+        <thead className="sticky top-0 border-4 border-black bg-white font-bold">
           <tr className="border-4 border-black">
             <th className="border-4 border-black">Mã giao dịch</th>
             <th className="border-4 border-black">Thời gian giao dịch</th>
