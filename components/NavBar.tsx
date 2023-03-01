@@ -65,7 +65,7 @@ const NavBar = () => {
 
     return (
       <>
-        <div className="w-full h-20 flex items-center justify-between gap-3 px-5 py-2 z-50">
+        <div className="w-full h-20 flex items-center justify-between gap-3 px-5 py-2 z-10">
           <Link href="/">
             <h1 className="text-3xl md:block hidden font-bold text-white">
               GENFIG
@@ -376,7 +376,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="z-30 sticky top-0 flex flex-col gap-2 bg-black">
+    <nav className="z-10 sticky top-0 flex flex-col gap-2 bg-black">
       <NavBarUpper categoriesData={categoriesData} />
       <NavBarLower categoriesData={categoriesData} />
     </nav>

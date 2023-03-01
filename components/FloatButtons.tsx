@@ -79,11 +79,11 @@ const Cart = forwardRef(
     return (
       <div
         ref={ref}
-        className={`md:absolute fixed overflow-hidden md:bottom-[80%] bottom-0 md:right-[80%] right-0 md:w-[500px] w-full md:h-96 h-screen rounded-xl bg-white border-2 shadow-xl ${
+        className={`md:absolute z-40 fixed overflow-hidden md:bottom-[80%] bottom-0 md:right-[80%] right-0 md:w-[500px] w-full md:h-96 h-screen rounded-xl bg-white border-2 shadow-xl ${
           isOpen ? "block" : "hidden"
         }`}
       >
-        <div className="px-5 py-1 h-12 z-20 fixed rounded-t-xl flex md:w-[500px] w-full items-center justify-between gap-5 bg-white shadow-lg">
+        <div className="px-5 py-1 h-12 z-30 fixed rounded-t-xl flex md:w-[500px] w-full items-center justify-between gap-5 bg-white shadow-lg">
           <div className="w-4/6 flex gap-3">
             <p className="text-sm italic">Tổng:</p>
             <p className="text-xl font-bold">{showPrice(totalPrice)}</p>
