@@ -1,3 +1,5 @@
+const { yellow } = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -25,9 +27,31 @@ module.exports = {
             transform: "translateX(0)",
           },
         },
+
+        blinkLabel: {
+          from : {
+            color: "yellow",
+            backgroundColor: "red"
+          }, 
+          to : {
+            color: "red",
+            backgroundColor: "yellow"
+          }
+        },
+        growUp: {
+          from: {
+            height: "0"
+          },
+          to: {
+            height: "100vh"
+          }
+        }
       },
       animation: {
         openMenu: "openMenu 500ms ease-in-out forwards",
+        blinkLabel: "blinkLabel 1s linear alternate infinite both",
+        growUp: "growUp 500ms ease-in forwards"
+
       },
     },
     plugins: [require("flowbite/plugin")],

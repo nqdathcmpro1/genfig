@@ -136,11 +136,11 @@ const ProductList = ({ sort, setSort, category, productData }: Props) => {
       <div className="w-full grid place-items-center">
         <div className="w-full grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 ">
           {productData?.map((product) => (
-            <div key={product.id} className="w-full aspect-square">
+            <div key={product.id} className="w-full aspect-square ">
               <Link href={`/product/${product.id}`}>
                 <img
                   src={product.imgUrl}
-                  className="w-full object-cover rounded-xl"
+                  className="w-full object-cover border-2 rounded-xl"
                 />
               </Link>
               <div className="w-full flex flex-col justify-center">

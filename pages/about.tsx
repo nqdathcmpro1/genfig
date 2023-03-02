@@ -12,7 +12,7 @@ const About = (props: Props) => {
         Về chúng tôi
       </h1>
 
-      <p className="w-full text-lg md:text-xl">
+      <p className="w-full text-sm md:text-xl">
         GenFig được thành lập vào năm 2023, từ những con người có cùng đam mê
         tựa game Genshin Impact, cũng như đam mê về figure đã làm nên thương
         hiệu GenFig- Genshin Figure. Với niềm mong muốn mang đến niềm vui cho
@@ -22,7 +22,7 @@ const About = (props: Props) => {
       </p>
 
       <img
-        className="w-full md:w-1/2"
+        className="w-full md:w-1/2 rounded-lg border-2"
         src="https://i.etsystatic.com/35786495/r/il/0cbd54/4012785026/il_794xN.4012785026_c6fr.jpg"
       />
 
@@ -30,7 +30,7 @@ const About = (props: Props) => {
         Về sản phẩm
       </h1>
 
-      <p className="w-full text-lg md:text-xl">
+      <p className="w-full text-sm md:text-xl">
         GenFig luôn luôn lựa chọn các sản phẩm có chất lượng tốt nhất, đến từ
         các nhãn hàng uy tín như: miHoYo, Figuarts, Apex, ... Đặc biệt, chúng
         tôi luôn luôn nói không với các loại hàng giả, hàng nhái, hàng replica
@@ -39,7 +39,7 @@ const About = (props: Props) => {
         đa dạng, phù hợp với nhiều tập đối tượng khách hàng khác nhau.
       </p>
 
-      <span className="w-full text-lg md:text-xl">
+      <span className="w-full text-sm md:text-xl">
         Ngoài Figure là mặt hàng chủ đạo cùa GenFig, chúng tôi còn có các sản
         phẩm như:
         <li>Acrylic Standee</li>
@@ -49,7 +49,7 @@ const About = (props: Props) => {
       </span>
 
       <img
-        className="w-full md:w-1/2"
+        className="w-full md:w-1/2 rounded-lg border-2"
         src="https://bbts1.azureedge.net/images/p/full/2022/09/77e6e0a1-e9ae-45b3-8108-b2fab5718681.jpg"
       />
 
@@ -57,7 +57,7 @@ const About = (props: Props) => {
         Về phục vụ
       </h1>
 
-      <p className="w-full text-lg md:text-xl">
+      <p className="w-full text-sm md:text-xl">
         GenFig chính thức hoạt động mua bán từ 8h-20h hằng ngày (trừ các ngày
         Lễ, Tết). Kênh bảo hành sẽ hoạt động xuyên suốt 24/24 với bất cứ trường
         hợp hư hỏng hàng đến từ nhà sản xuất. GenFig chỉ phục vụ trên các nền
@@ -67,7 +67,7 @@ const About = (props: Props) => {
       </p>
 
       <img
-        className="w-full md:w-1/2"
+        className="w-full md:w-1/2 rounded-lg border-2"
         src="https://bbts1.azureedge.net/images/p/full/2021/04/c58b7092-67e8-4d67-8fc0-1f49192de07b.jpg"
       />
 
@@ -77,7 +77,7 @@ const About = (props: Props) => {
 
       <div className="w-10/12 bg-amber-100 rounded-xl text-lg md:text-xl flex flex-col md:flex-row justify-between gap-5 p-10">
         <img
-          className="w-full md:w-1/2"
+          className="w-full md:w-1/2 border-2 rounded-lg"
           src="https://i.ytimg.com/vi/7MHGZRzrvGU/hqdefault.jpg"
         />
         <div className="w-full md:w-1/2">

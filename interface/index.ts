@@ -6,6 +6,7 @@ export interface Product {
   imgUrl: string;
   quantity: number;
   category: string;
+  categorySlug: string
   timestamp?: Timestamp 
 }
 

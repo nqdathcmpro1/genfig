@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { BsArrowUp, BsCart } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
-import { AiOutlineCloseCircle } from "react-icons/ai"
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 import showPrice from "@/utils/showPrice";
 import { CartContext } from "@/context/CartContext";
@@ -20,7 +20,7 @@ type Props = {};
 type CartProps = {
   ref: React.Ref<HTMLDivElement>;
   isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 type CartItemProps = {
@@ -74,12 +74,12 @@ const Cart = forwardRef(
   ({ isOpen, setIsOpen }: CartProps, ref: React.Ref<HTMLDivElement>) => {
     const { cart, totalPrice } = useContext(CartContext);
 
-    const router = useRouter()
+    const router = useRouter();
 
     return (
       <div
         ref={ref}
-        className={`md:absolute z-40 fixed overflow-hidden md:bottom-[80%] bottom-0 md:right-[80%] right-0 md:w-[500px] w-full md:h-96 h-screen rounded-xl bg-white border-2 shadow-xl ${
+        className={`md:absolute z-40 fixed overflow-hidden md:bottom-[80%] bottom-0 md:right-[80%] right-0 md:w-[500px] w-full md:h-96 animate-growUp md:animate-none rounded-xl bg-white border-2 shadow-xl ${
           isOpen ? "block" : "hidden"
         }`}
       >
@@ -89,11 +89,18 @@ const Cart = forwardRef(
             <p className="text-xl font-bold">{showPrice(totalPrice)}</p>
           </div>
 
-          <button onClick={() => totalPrice > 0 && router.push("/payment") } className="w-24 h-full text-white bg-red-600 rounded-lg">
+          <button
+            onClick={() => router.push("/payment")}
+            disabled={totalPrice <= 0}
+            className="w-24 h-full text-white bg-red-600 rounded-lg disabled:bg-gray-300"
+          >
             Thanh toán
           </button>
 
-          <AiOutlineCloseCircle onClick={() => setIsOpen(false)} className="md:hidden block text-3xl font-bold cursor-pointer" />
+          <AiOutlineCloseCircle
+            onClick={() => setIsOpen(false)}
+            className="md:hidden block text-3xl font-bold cursor-pointer"
+          />
         </div>
         <div className="w-full h-full overflow-y- relative pt-12 grid grid-cols-1 divide-y-2">
           {cart?.map((item, index) => (

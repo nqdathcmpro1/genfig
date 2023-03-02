@@ -36,7 +36,7 @@ const Collection = ({ categoryData }: Props) => {
       const queryProductSnapshot = await getDocs(
         query(
           collection(db, "products"),
-          where("category", "==", router?.query.collection),
+          where("categorySlug", "==", router?.query.collection),
           orderBy(sort?.field, sort.isAscending ? "asc" : "desc"),
         )
       );
@@ -49,6 +49,7 @@ const Collection = ({ categoryData }: Props) => {
           quantity: doc.data().quantity,
           imgUrl: doc.data().imgUrl,
           category: doc.data().category,
+          categorySlug: doc.data().categorySlug
         });
       });
       setProductData([...products]);

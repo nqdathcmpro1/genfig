@@ -18,17 +18,18 @@ import { Category, Product } from "@/interface";
 const HomePageCaroussel = () => {
   return (
     <div className="w-full h-fit grid place-items-center ">
-      <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 w-9/12 rounded-none">
-        <Carousel slideInterval={10000} className="object-contain rounded-none">
+      <div className=" w-9/12 aspect-video rounded-none">
+        <Carousel slideInterval={5000} className="object-cover rounded-xl border-2">
           <img
+            className="object-cover"
             src="https://genshin.global/wp-content/uploads/2022/08/nendoroid-kaeya-xiao-figure-toy-goodsmile-genshin.webp"
             alt="..."
           />
           <img
+            className="object-cover"
             src="https://genshin.global/wp-content/uploads/2022/07/kotobukiya-aether-lumine-traveler-figure-genshinimpact-887w.webp"
             alt="..."
           />
-          
         </Carousel>
       </div>
     </div>
@@ -50,7 +51,7 @@ const HomePageProductPreview = ({
   category,
 }: ProductReviewProps) => {
   const productsFromCategory = productData?.filter(
-    (product) => product.category === category.slug
+    (product) => product.categorySlug === category.slug
   );
 
   const isEmpty: boolean = productsFromCategory.length === 0;
@@ -68,14 +69,14 @@ const HomePageProductPreview = ({
                 <Link
                   href={`/product/${product.id}`}
                   key={product.id}
-                  className="w-full h-full aspect-square group row-span-2 col-span-2 rounded-lg overflow-hidden relative"
+                  className="w-full h-full aspect-square group row-span-2 col-span-2 rounded-xl overflow-hidden relative"
                 >
-                  <div className="absolute top-5 left-5 bg-red-700 p-2 rounded-lg text-yellow-300">
-                    <p>Newest</p>
+                  <div className="absolute top-5 left-5 animate-blinkLabel font-bold p-2 rounded-lg ">
+                    <p>Mới</p>
                   </div>
                   <img
                     src={product.imgUrl}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover border-2 rounded-xl"
                   />
                   <div className="absolute md:group-hover:flex md:hidden flex bottom-0 w-full h-fit bg-black/50 px-5 py-2  gap-2 flex-col md:items-start items-center">
                     <h1 className="text-white md:text-3xl text-xl font-light truncate">
@@ -90,11 +91,11 @@ const HomePageProductPreview = ({
                 <Link
                   href={`/product/${product.id}`}
                   key={product.id}
-                  className="w-full h-full aspect-square group rounded-lg border-2 overflow-hidden relative"
+                  className="w-full h-full aspect-square group rounded-xl overflow-hidden relative"
                 >
                   <img
                     src={product.imgUrl}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover border-2 rounded-xl"
                   />
                   <div className="absolute bottom-0 w-full h-fit bg-black/50 md:group-hover:flex md:hidden flex px-3 py-1 flex-col md:items-start items-center gap-1">
                     <h1 className="text-white md:text-sm text-xs font-light truncate">
@@ -183,6 +184,7 @@ export const getServerSideProps = async (
       imgUrl: doc.data().imgUrl,
       price: doc.data().price,
       category: doc.data().category,
+      categorySlug: doc.data().categorySlug,
       quantity: doc.data().quantity,
     });
   });
