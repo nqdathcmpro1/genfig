@@ -49,6 +49,7 @@ const Collection = () => {
           quantity: doc.data().quantity,
           imgUrl: doc.data().imgUrl,
           category: doc.data().category,
+          categorySlug: doc.data().categorySlug
         });
       });
       setProductData([...products]);
