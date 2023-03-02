@@ -176,7 +176,7 @@ const CategoryLayout = ({ categories }: Props) => {
             <p className="text-3xl font-bold">{category.category}</p>
             <span className="flex gap-5 items-center">
               <MdCategory />
-              <p>{category.category}</p>
+              <p>{category.slug}</p>
             </span>
             <span className="flex items-center">
               <MdEdit
