@@ -25,6 +25,7 @@ export const CartContext = createContext<ContextType>({
       category: "",
       cartQuantity: 0,
       totalPrice: 0,
+      categorySlug: "",
     },
   ],
   totalPrice: 0,
